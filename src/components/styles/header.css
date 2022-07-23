@@ -1,0 +1,22 @@
+.Header {
+  width: 100%;
+  height: 64px;
+  background-color: var(--background);
+  position: fixed;
+  z-index: 1;
+}
+
+.Header > div {
+  position: relative;
+  width: 80vw;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.Header > div > img {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

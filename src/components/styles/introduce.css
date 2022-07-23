@@ -1,0 +1,122 @@
+.Introduce {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background);
+}
+
+.Introduce > .preset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 100%;
+}
+
+.Introduce > .preset > .title-img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 25rem;
+  right: 0;
+  z-index: -1;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.Introduce > .preset > .path-img {
+  position: absolute;
+  top: calc(50% - 16rem);
+  transform: translateY(-50%);
+  height: 2rem;
+  right: 18rem;
+  z-index: -1;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.Introduce > .preset > .asset-img {
+  position: absolute;
+  top: calc(50% - 16rem);
+  transform: translateY(-50%);
+  height: 3rem;
+  right: -1rem;
+  z-index: -1;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.Introduce > .preset > .explore-img {
+  position: absolute;
+  top: calc(50% + 13rem);
+  transform: translateY(-50%);
+  height: 3rem;
+  right: 40rem;
+  z-index: -1;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.Introduce > .preset > .object-img {
+  position: absolute;
+  top: calc(50% + 18rem);
+  transform: translateY(-50%);
+  height: 2rem;
+  right: -5rem;
+  z-index: -1;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.Introduce > .preset > .title-preset {
+  position: absolute;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.Introduce > .preset > .title-preset > .title {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--textBlack);
+}
+
+.Introduce > .preset > .title-preset > .title > span {
+  font-weight: 900;
+  background: linear-gradient(45deg, #cf33e5, #8052ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.Introduce > .preset > .title-preset > .detail {
+  font-weight: 400;
+  color: var(--textDetail);
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+.Introduce > .preset > .title-preset > button {
+  min-width: 70px;
+  height: 40px;
+  padding: 0 15px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: ease-out background-color 100ms;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: #7f52ff;
+  color: #fff;
+  margin-top: 3rem;
+}
+
+.Introduce > .preset > .title-preset > button:hover {
+  background-color: #7048e0;
+}
