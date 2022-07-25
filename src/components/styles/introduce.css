@@ -4,8 +4,7 @@
   left: 0;
   width: 100vw;
   height: 60rem;
-  max-height: 100vh;
-  background: var(--background);
+  background-color: var(--background);
 }
 
 .Introduce > .preset {

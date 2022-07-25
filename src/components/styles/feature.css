@@ -1,0 +1,24 @@
+.Feature {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 500rem;
+  background-color: var(--background);
+}
+
+.Feature > .animation {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  max-width: 100vw;
+  height: 50vh;
+  background-color: #7048e0;
+}
+
+.Feature > .animation:first-child {
+  float: left;
+}
+
+.Feature > .animation:last-child {
+  float: right;
+}
