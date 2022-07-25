@@ -18,7 +18,7 @@ export default function Introduce() {
             <br />
             development tool
             <br />
-            for Everyone
+            for everyone
           </p>
           <p className="detail">
             Selenod is a no-code tool for building applications easily
