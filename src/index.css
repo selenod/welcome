@@ -23,3 +23,15 @@ html {
   margin: 0;
   padding: 0;
 }
+
+image {
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

@@ -4,8 +4,11 @@ import pathImg from '../assets/svgs/path.svg';
 import assetImg from '../assets/svgs/asset.svg';
 import exploreImg from '../assets/svgs/explore.svg';
 import objectImg from '../assets/svgs/object.svg';
+import { useEffect, useState } from 'react';
 
 export default function Introduce() {
+  const [scale, setScale] = useState<number>(1);
+
   return (
     <div className="Introduce">
       <div className="preset">
@@ -27,7 +30,16 @@ export default function Introduce() {
         <img className="path-img" src={pathImg} alt="" />
         <img className="asset-img" src={assetImg} alt="" />
         <img className="explore-img" src={exploreImg} alt="" />
-        <img className="title-img" src={titleImg} alt="" />
+        <img
+          className="title-img"
+          src={titleImg}
+          alt=""
+          style={{
+            transform: `translateY(-50%) scale(${scale})`,
+          }}
+          onMouseEnter={() => setScale(1.025)}
+          onMouseLeave={() => setScale(1)}
+        />
         <img className="object-img" src={objectImg} alt="" />
       </div>
     </div>

@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 60rem;
+  max-height: 100vh;
   background: var(--background);
 }
 
@@ -12,63 +13,58 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 1250px;
+  max-width: 90vw;
   height: 100%;
 }
 
 .Introduce > .preset > .title-img {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
-  height: 25rem;
+  height: 35%;
   right: 0;
   z-index: -1;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
+  transition: transform 250ms ease-in-out;
 }
 
 .Introduce > .preset > .path-img {
   position: absolute;
-  top: calc(50% - 16rem);
+  top: calc(50% - 14.5rem);
   transform: translateY(-50%);
   height: 2rem;
   right: 18rem;
   z-index: -1;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
+  animation: movement 2s ease-in-out infinite alternate;
 }
 
 .Introduce > .preset > .asset-img {
   position: absolute;
-  top: calc(50% - 16rem);
+  top: calc(50% - 14.5rem);
   transform: translateY(-50%);
   height: 3rem;
   right: -1rem;
   z-index: -1;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
+  animation: movement 1.1s ease-in-out infinite alternate-reverse;
 }
 
 .Introduce > .preset > .explore-img {
   position: absolute;
-  top: calc(50% + 13rem);
+  top: calc(50% + 7.5rem);
   transform: translateY(-50%);
   height: 3rem;
-  right: 40rem;
+  right: 35rem;
   z-index: -1;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
+  animation: movement 1.5s ease-in-out infinite alternate-reverse;
 }
 
 .Introduce > .preset > .object-img {
   position: absolute;
-  top: calc(50% + 18rem);
+  top: calc(50% + 13.5rem);
   transform: translateY(-50%);
   height: 2rem;
-  right: -5rem;
+  right: -4rem;
   z-index: -1;
-  image-rendering: -webkit-optimize-contrast;
-  backface-visibility: hidden;
+  animation: movement 2s ease-in-out infinite alternate;
 }
 
 .Introduce > .preset > .title-preset {
@@ -81,13 +77,14 @@
 
 .Introduce > .preset > .title-preset > .title {
   font-family: 'Urbanist', sans-serif;
-  font-weight: 700;
-  font-size: 3rem;
+  font-weight: 900;
+  font-size: 3.5rem;
   color: var(--textBlack);
+  line-height: 4rem;
 }
 
 .Introduce > .preset > .title-preset > .title > span {
-  font-weight: 900;
+  /* font-style: italic; */
   background: linear-gradient(45deg, #cf33e5, #8052ff);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -102,21 +99,30 @@
 }
 
 .Introduce > .preset > .title-preset > button {
-  min-width: 70px;
-  height: 40px;
-  padding: 0 15px;
+  min-width: 8rem;
+  height: 3rem;
+  padding: 0 1rem;
   outline: none;
   border: none;
   border-radius: 5px;
   transition: ease-out background-color 100ms;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 500;
   background-color: #7f52ff;
   color: #fff;
-  margin-top: 3rem;
+  margin-top: 5rem;
 }
 
 .Introduce > .preset > .title-preset > button:hover {
   background-color: #7048e0;
+}
+
+@keyframes movement {
+  0% {
+    margin-top: 0rem;
+  }
+  0% {
+    margin-top: 1rem;
+  }
 }
