@@ -4,7 +4,7 @@ import pathImg from '../assets/svgs/path.svg';
 import assetImg from '../assets/svgs/asset.svg';
 import exploreImg from '../assets/svgs/explore.svg';
 import objectImg from '../assets/svgs/object.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function Introduce() {
   const [scale, setScale] = useState<number>(1);
