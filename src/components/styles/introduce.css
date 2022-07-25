@@ -78,9 +78,9 @@
 .Introduce > .preset > .title-preset > .title {
   font-family: 'Urbanist', sans-serif;
   font-weight: 900;
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--textBlack);
-  line-height: 4rem;
+  line-height: 4.25rem;
 }
 
 .Introduce > .preset > .title-preset > .title > span {
@@ -95,7 +95,7 @@
   font-weight: 400;
   color: var(--textDetail);
   font-size: 1.25rem;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
 }
 
 .Introduce > .preset > .title-preset > button {
@@ -111,7 +111,7 @@
   font-weight: 500;
   background-color: #7f52ff;
   color: #fff;
-  margin-top: 5rem;
+  margin-top: 4rem;
 }
 
 .Introduce > .preset > .title-preset > button:hover {
