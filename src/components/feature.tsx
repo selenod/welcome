@@ -21,7 +21,7 @@ export default function Feature() {
         style={{
           top: '0vh',
           width: `${Math.pow(scrollProgress, 1.25)}%`,
-          opacity: `${Math.pow(scrollProgress, 1.15) / 100}`,
+          opacity: `${Math.pow(scrollProgress, 1.75) / 1000}`,
         }}
       />
       <div
@@ -29,7 +29,7 @@ export default function Feature() {
         style={{
           top: '50vh',
           width: `${Math.pow(scrollProgress, 1.25)}%`,
-          opacity: `${Math.pow(scrollProgress, 1.15) / 100}`,
+          opacity: `${Math.pow(scrollProgress, 1.75) / 1000}`,
         }}
       />
     </div>
