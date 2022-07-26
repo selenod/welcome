@@ -6,32 +6,9 @@ export default function Feature() {
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      if (window.scrollY < 1000) {
-        setScrollProgress(0);
-      } else {
-        setScrollProgress(((window.scrollY - 1000) / 1000) * 100);
-      }
+      setScrollProgress(((window.scrollY - 1000) / 500) * 100);
     });
   }, []);
 
-  return (
-    <div className="Feature">
-      <div
-        className="animation"
-        style={{
-          top: '0vh',
-          width: `${Math.pow(scrollProgress, 1.25)}%`,
-          opacity: `${Math.pow(scrollProgress, 1.75) / 1000}`,
-        }}
-      />
-      <div
-        className="animation"
-        style={{
-          top: '50vh',
-          width: `${Math.pow(scrollProgress, 1.25)}%`,
-          opacity: `${Math.pow(scrollProgress, 1.75) / 1000}`,
-        }}
-      />
-    </div>
-  );
+  return <div className="Feature"></div>;
 }
