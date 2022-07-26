@@ -75,7 +75,9 @@
 }
 
 .Introduce > .preset > .title-preset > .title {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+    'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-weight: 900;
   font-size: 4rem;
   color: var(--textBlack);
@@ -91,6 +93,9 @@
 }
 
 .Introduce > .preset > .title-preset > .detail {
+  font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+    'Noto Sans KR', 'Malgun Gothic', sans-serif;
   font-weight: 400;
   color: var(--textDetail);
   font-size: 1.25rem;
@@ -100,10 +105,10 @@
 .Introduce > .preset > .title-preset > button {
   min-width: 8rem;
   height: 3rem;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 7px;
   transition: ease-out background-color 100ms;
   font-size: 1.05rem;
   cursor: pointer;

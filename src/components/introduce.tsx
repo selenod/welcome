@@ -25,7 +25,7 @@ export default function Introduce() {
             <br />
             for Windows, Linux, and macOS.
           </p>
-          <button>Go to Editor</button>
+          <button>Get Started</button>
         </div>
         <img className="path-img" src={pathImg} alt="" />
         <img className="asset-img" src={assetImg} alt="" />

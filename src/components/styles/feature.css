@@ -5,7 +5,7 @@
   height: 500rem;
   background-color: var(--background);
 }
-.Introduce > .preset {
+.Feature > .preset {
   position: absolute;
   top: 50%;
   left: 50%;

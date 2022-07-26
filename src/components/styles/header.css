@@ -3,7 +3,7 @@
   height: 64px;
   top: 50pxs;
   background-color: var(--background);
-  position: absolute;
+  position: fixed;
   z-index: 1;
 }
 
