@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 30rem;
+  height: 25rem;
   background-color: var(--background);
 }
 
@@ -95,7 +95,7 @@
 
 .Footer > .preset > div > .part-down {
   width: 100%;
-  height: 5rem;
+  height: 1.5rem;
 }
 
 .Footer > .preset > div > .part-down > p {
