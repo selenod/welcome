@@ -1,4 +1,4 @@
-import './styles/introduce.css';
+import './styles/part0.css';
 import titleImg from '../assets/svgs/titleImg.svg';
 import pathImg from '../assets/svgs/path.svg';
 import assetImg from '../assets/svgs/asset.svg';
@@ -6,14 +6,14 @@ import exploreImg from '../assets/svgs/explore.svg';
 import objectImg from '../assets/svgs/object.svg';
 import { useState } from 'react';
 
-export default function Introduce() {
+export default function Part0() {
   const [scale, setScale] = useState<number>(1);
 
   return (
-    <div className="Introduce">
+    <div className="Part0">
       <div className="preset">
         <div className="title-preset">
-          <p className="title">
+          <p className="title urbanist">
             <span>No-Code</span>
             <br />
             development tool

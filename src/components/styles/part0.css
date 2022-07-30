@@ -1,4 +1,4 @@
-.Introduce {
+.Part0 {
   position: relative;
   top: 0;
   left: 0;
@@ -7,7 +7,7 @@
   background-color: var(--background);
 }
 
-.Introduce > .preset {
+.Part0 > .preset {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -17,7 +17,7 @@
   height: 100%;
 }
 
-.Introduce > .preset > .title-img {
+.Part0 > .preset > .title-img {
   position: absolute;
   top: 50%;
   height: 35%;
@@ -26,7 +26,7 @@
   transition: transform 250ms ease-in-out;
 }
 
-.Introduce > .preset > .path-img {
+.Part0 > .preset > .path-img {
   position: absolute;
   top: calc(50% - 14.5rem);
   transform: translateY(-50%);
@@ -36,7 +36,7 @@
   animation: movement 1.1s ease-in-out infinite alternate;
 }
 
-.Introduce > .preset > .asset-img {
+.Part0 > .preset > .asset-img {
   position: absolute;
   top: calc(50% - 14.5rem);
   transform: translateY(-50%);
@@ -46,7 +46,7 @@
   animation: movement 1.4s ease-in-out infinite alternate-reverse;
 }
 
-.Introduce > .preset > .explore-img {
+.Part0 > .preset > .explore-img {
   position: absolute;
   top: calc(50% + 7.5rem);
   transform: translateY(-50%);
@@ -56,7 +56,7 @@
   animation: movement 1.1s ease-in-out infinite alternate-reverse;
 }
 
-.Introduce > .preset > .object-img {
+.Part0 > .preset > .object-img {
   position: absolute;
   top: calc(50% + 13.5rem);
   transform: translateY(-50%);
@@ -66,7 +66,7 @@
   animation: movement 1.4s ease-in-out infinite alternate;
 }
 
-.Introduce > .preset > .title-preset {
+.Part0 > .preset > .title-preset {
   position: absolute;
   height: auto;
   top: 50%;
@@ -74,17 +74,14 @@
   left: 0;
 }
 
-.Introduce > .preset > .title-preset > .title {
-  font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
-    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
-    'Noto Sans KR', 'Malgun Gothic', sans-serif;
+.Part0 > .preset > .title-preset > .title {
   font-weight: 900;
   font-size: 4rem;
   color: var(--textBlack);
   line-height: 4.25rem;
 }
 
-.Introduce > .preset > .title-preset > .title > span {
+.Part0 > .preset > .title-preset > .title > span {
   /* font-style: italic; */
   background: linear-gradient(45deg, #cf33e5, #8052ff);
   -webkit-text-fill-color: transparent;
@@ -92,17 +89,14 @@
   background-clip: text;
 }
 
-.Introduce > .preset > .title-preset > .detail {
-  font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
-    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
-    'Noto Sans KR', 'Malgun Gothic', sans-serif;
+.Part0 > .preset > .title-preset > .detail {
   font-weight: 400;
   color: var(--textDetail);
   font-size: 1.25rem;
   margin-top: 1.75rem;
 }
 
-.Introduce > .preset > .title-preset > button {
+.Part0 > .preset > .title-preset > button {
   min-width: 8rem;
   height: 3rem;
   padding: 0 1.25rem;
@@ -110,7 +104,7 @@
   border: none;
   border-radius: 7px;
   transition: ease-out background-color 100ms;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   cursor: pointer;
   font-weight: 500;
   background-color: #7f52ff;
@@ -118,7 +112,7 @@
   margin-top: 4rem;
 }
 
-.Introduce > .preset > .title-preset > button:hover {
+.Part0 > .preset > .title-preset > button:hover {
   background-color: #7048e0;
 }
 

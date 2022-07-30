@@ -7,6 +7,7 @@ body {
     'Malgun Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f9fa;
 
   --background: #f7f9fa;
   --textBlack: #1a1b1c;
@@ -22,9 +23,10 @@ html {
 * {
   margin: 0;
   padding: 0;
+  letter-spacing: -0.025rem;
 }
 
-image {
+img {
   image-rendering: -webkit-optimize-contrast;
   backface-visibility: hidden;
 }
@@ -34,4 +36,10 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.urbanist {
+  font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
+    'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
