@@ -9,7 +9,7 @@ export default function Part1() {
           <p className="comment urbanist">
             <span>Here, all things you need is ready.</span>
             <br />
-            Editor, node-based language, and app builder.
+            Editor, node-based language, builder for web.
           </p>
           <img className="double-windows-img" src={doubleWindows} alt="" />
         </div>

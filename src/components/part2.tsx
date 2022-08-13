@@ -22,8 +22,7 @@ export default function Part2() {
               Because Selenod is web-based tool, open your browser and connect
               with one click.
               <br />
-              To build an application, run the builder by clicking a button on
-              web after downloading the builder.
+              To build an application, just click a button on web.
             </p>
           </div>
           <div className="section">
