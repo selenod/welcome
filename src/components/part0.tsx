@@ -4,10 +4,14 @@ import pathImg from '../assets/svgs/path.svg';
 import assetImg from '../assets/svgs/asset.svg';
 import exploreImg from '../assets/svgs/explore.svg';
 import objectImg from '../assets/svgs/object.svg';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { dataContext } from '..';
+import { useNavigate } from 'react-router-dom';
 
 export default function Part0() {
   const [scale, setScale] = useState<number>(1);
+  const data = useContext(dataContext);
+  const navigate = useNavigate();
 
   return (
     <div className="Part0">
@@ -25,7 +29,11 @@ export default function Part0() {
             <br />
             for Windows, Linux, and macOS.
           </p>
-          <button>Get Started</button>
+          {data?.isLoggedIn ? (
+            <button onClick={() => {}}>Go to Workspace</button>
+          ) : (
+            <button onClick={() => navigate('/login')}>Get Started</button>
+          )}
         </div>
         <img className="path-img" src={pathImg} alt="" />
         <img className="asset-img" src={assetImg} alt="" />

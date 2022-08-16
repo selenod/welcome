@@ -14,7 +14,7 @@
   transform: translateX(-50%);
 }
 
-.Header > div > img {
+.Header > div > a > img {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -28,6 +28,7 @@
   background-color: #e6ecf0;
   float: right;
   width: 7rem;
+  max-width: 250px;
   height: 2.5rem;
   border-radius: 2rem;
   cursor: pointer;
@@ -36,11 +37,15 @@
 .Header > div > .start > p {
   position: relative;
   top: 50%;
+  width: 100%;
   text-align: center;
   transform: translateY(-50%);
   color: #474a4d;
   font-size: 0.95rem;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .Header > div > .translate {

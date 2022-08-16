@@ -5,6 +5,7 @@
   width: 100vw;
   height: 25rem;
   background-color: var(--background);
+  border-top: 1px solid var(--lineColor);
 }
 
 .Footer > .preset {

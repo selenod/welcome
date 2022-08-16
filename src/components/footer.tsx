@@ -36,17 +36,6 @@ export default function Footer() {
                 </Link>
               </div>
             </div>
-            <div className="section">
-              <p className="rep">Download Builder</p>
-              <div>
-                <Link to="/">
-                  <p>for Windows</p>
-                </Link>
-                <Link to="/">
-                  <p>for macOS</p>
-                </Link>
-              </div>
-            </div>
             <div
               className="button"
               onClick={() => {

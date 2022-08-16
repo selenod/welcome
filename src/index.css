@@ -1,4 +1,5 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
@@ -7,13 +8,14 @@ body {
     'Malgun Gothic', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f7f9fa;
+  background-color: var(--background);
   overflow-x: hidden;
 
   --background: #f7f9fa;
   --textBlack: #1a1b1c;
   --textDetail: #8a9399;
   --lineColor: #d8e0e5;
+  --popContentHoverColor: #f5f6f7;
 }
 
 html {
@@ -25,6 +27,12 @@ html {
   margin: 0;
   padding: 0;
   letter-spacing: -0.025rem;
+}
+
+div {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 img {
@@ -43,4 +51,117 @@ button {
   font-family: 'Urbanist', Pretendard, -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo',
     'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+.loading span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  animation: loading 750ms 0s linear infinite;
+}
+
+.loading span:nth-child(1) {
+  background-color: #ff5061;
+  margin-right: 10px;
+  transform: scale(0.9);
+}
+
+.loading span:nth-child(2) {
+  animation-delay: 0.25s;
+  background-color: #e21aff;
+  transform: scale(0.9);
+}
+
+.loading span:nth-child(3) {
+  animation-delay: 0.5s;
+  background-color: #7f52ff;
+  margin-left: 10px;
+  transform: scale(0.9);
+}
+
+.react-tiny-popover-container {
+  z-index: 999;
+}
+
+.popover-parent {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px #00000015;
+  padding: 5px 5px;
+}
+
+.popover {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.popover::-webkit-scrollbar {
+  display: none;
+}
+
+.popover > div:not(.popover > .hl) {
+  position: relative;
+  width: calc(100%);
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  filter: none;
+  background-color: #fff;
+  border-radius: 6px;
+  transition: ease-out background-color 100ms;
+  font-size: 0.95rem;
+}
+
+.popover > div:not(.popover > div:last-child) {
+  margin-bottom: 3px;
+}
+
+.popover > div:not(.popover > .hl):hover {
+  background-color: var(--popContentHoverColor);
+}
+
+.popover > div:not(.popover > .hl) > p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 0 0 15px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.popover > div:not(.popover > .hl) > div {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 15px;
+}
+
+.popover > div:not(.popover > .hl) > div > svg {
+  margin-top: 0.5px;
+  float: left;
+}
+
+.popover > div:not(.popover > .hl) > div > p {
+  display: block;
+  margin: 0 0 0 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
