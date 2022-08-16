@@ -25,14 +25,11 @@ export default function Footer() {
             <div className="section">
               <p className="rep">Learn More</p>
               <div>
-                <a href="https://github.com/selenod/selenod/issues/new">
+                <a href="https://github.com/selenod/support/issues/new">
                   <p>Support</p>
                 </a>
                 <Link to="/">
                   <p>Developers</p>
-                </Link>
-                <Link to="/">
-                  <p>Github Repository</p>
                 </Link>
               </div>
             </div>

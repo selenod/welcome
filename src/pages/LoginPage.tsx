@@ -8,6 +8,10 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    document.title = 'Login - Selenod';
+  }, []);
+
+  useEffect(() => {
     if (data!.isLoggedIn) {
       navigate('/');
     }
