@@ -1,6 +1,11 @@
+import { useEffect } from 'react';
 import { ResponseProps } from '../data';
 
 export default function ErrorPage({ status, message }: ResponseProps) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div
       style={{

@@ -3,6 +3,7 @@ import flame from '../assets/svgs/flame.svg';
 import { useContext } from 'react';
 import { dataContext } from '..';
 import { useNavigate } from 'react-router-dom';
+import { workspaceURL } from '../config/config';
 
 export default function Part3() {
   const data = useContext(dataContext);
@@ -16,7 +17,15 @@ export default function Part3() {
           <p className="title urbanist">It’s time to boost your development.</p>
           <p className="detail">Selenod is 100% free for all.</p>
           {data?.isLoggedIn ? (
-            <button onClick={() => {}}>Go to Workspace</button>
+            <button
+              onClick={() =>
+                (window.location.href = `${workspaceURL}/login/${localStorage.getItem(
+                  'id'
+                )}/${localStorage.getItem('nickname')}`)
+              }
+            >
+              Go to Workspace
+            </button>
           ) : (
             <button onClick={() => navigate('/login')}>Get Started</button>
           )}

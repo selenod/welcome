@@ -10,6 +10,7 @@ import LandingPage from './pages/LandingPage';
 import LoginPage from './pages/LoginPage';
 import RedirectPage from './pages/RedirectPage';
 import ResponsePage from './pages/ResponsePage';
+import SyncPage from './pages/SyncPage';
 
 interface Data {
   isLoggedIn: boolean;
@@ -37,6 +38,7 @@ function App() {
         <Router>
           <Header />
           <Routes>
+            <Route path="/logout/:id/:nickname" element={<SyncPage />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/redirect/:platform" element={<RedirectPage />} />

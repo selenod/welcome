@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react';
 import ResponsePage from './ResponsePage';
 import { ResponseProps } from '../data';
 import { useNavigate, useParams } from 'react-router-dom';
-import { setDataContext } from '..';
+import { dataContext, setDataContext } from '..';
 import api from '../config/api';
 
 export default function RedirectPage() {
@@ -12,6 +12,7 @@ export default function RedirectPage() {
     message: undefined,
   });
   const navigate = useNavigate();
+  const data = useContext(dataContext);
   const setData = useContext(setDataContext);
   const { platform } = useParams();
 
@@ -35,9 +36,9 @@ export default function RedirectPage() {
                   },
                 }
               )
-              .then((data) => {
-                localStorage.setItem('id', data.data.id);
-                localStorage.setItem('nickname', data.data.name);
+              .then((res) => {
+                localStorage.setItem('id', res.data.id);
+                localStorage.setItem('nickname', res.data.name);
                 setData!({ ...setData, isLoggedIn: true });
                 navigate('/');
               })
@@ -58,16 +59,16 @@ export default function RedirectPage() {
           let code = url.searchParams.get('code');
           await api
             .get(`/user/auth?platform=kakao&code=${code}`)
-            .then((data) => {
-              localStorage.setItem('id', data.data.id);
-              localStorage.setItem('nickname', data.data.name);
-              setData!({ ...setData, isLoggedIn: true });
+            .then((res) => {
+              localStorage.setItem('id', res.data.id);
+              localStorage.setItem('nickname', res.data.name);
+              setData!({ ...data, isLoggedIn: true });
               navigate('/');
             })
             .catch(() => {
               setProps({
-                status: '401',
-                message: 'OAuth token has expired.',
+                status: '400',
+                message: 'Bad Request.',
               });
             });
           break;
@@ -77,7 +78,7 @@ export default function RedirectPage() {
     }
 
     fetchData();
-  }, [navigate, platform, setData]);
+  }, [navigate, platform, data, setData]);
 
   return <ResponsePage {...props} />;
 }

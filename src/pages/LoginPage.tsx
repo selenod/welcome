@@ -8,6 +8,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = 'Login - Selenod';
   }, []);
 

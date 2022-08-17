@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Popover } from 'react-tiny-popover';
 import { PopContent } from '../assets/components/popcontent';
 import { dataContext, setDataContext } from '..';
+import { workspaceURL } from '../config/config';
 
 interface PopoverInterface {
   workspace: boolean;
@@ -56,15 +57,21 @@ export default function Header() {
                 contents={[
                   {
                     text: 'Workspace',
-                    onClick: () => {},
+                    onClick: () =>
+                      (window.location.href = `${workspaceURL}/login/${localStorage.getItem(
+                        'id'
+                      )}/${localStorage.getItem('nickname')}`),
                   },
                   {
                     text: 'Log out',
                     onClick: () => {
+                      const id = localStorage.getItem('id');
+                      const nickname = localStorage.getItem('nickname');
+
                       localStorage.removeItem('id');
                       localStorage.removeItem('nickname');
-                      setIsPopoverOpen({ ...isPopoverOpen, workspace: false });
                       setData!({ ...data, isLoggedIn: false });
+                      window.location.href = `${workspaceURL}/logout/${id}/${nickname}`;
                     },
                   },
                 ]}

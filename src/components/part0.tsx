@@ -7,6 +7,7 @@ import objectImg from '../assets/svgs/object.svg';
 import { useContext, useState } from 'react';
 import { dataContext } from '..';
 import { useNavigate } from 'react-router-dom';
+import { workspaceURL } from '../config/config';
 
 export default function Part0() {
   const [scale, setScale] = useState<number>(1);
@@ -30,7 +31,15 @@ export default function Part0() {
             for Windows, Linux, and macOS.
           </p>
           {data?.isLoggedIn ? (
-            <button onClick={() => {}}>Go to Workspace</button>
+            <button
+              onClick={() =>
+                (window.location.href = `${workspaceURL}/login/${localStorage.getItem(
+                  'id'
+                )}/${localStorage.getItem('nickname')}`)
+              }
+            >
+              Go to Workspace
+            </button>
           ) : (
             <button onClick={() => navigate('/login')}>Get Started</button>
           )}

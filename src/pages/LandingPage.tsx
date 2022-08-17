@@ -6,6 +6,7 @@ import Part3 from '../components/part3';
 
 export default function LandingPage() {
   useEffect(() => {
+    window.scrollTo(0, 0);
     document.title = 'Selenod';
   }, []);
 
