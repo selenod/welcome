@@ -37,10 +37,23 @@ export default function RedirectPage() {
                 }
               )
               .then((res) => {
-                localStorage.setItem('id', res.data.id);
-                localStorage.setItem('nickname', res.data.name);
-                setData!({ ...setData, isLoggedIn: true });
-                navigate('/');
+                api
+                  .post('/user/create', {
+                    username: res.data.name,
+                    uid: res.data.id,
+                  })
+                  .then(() => {
+                    localStorage.setItem('id', res.data.id);
+                    localStorage.setItem('nickname', res.data.name);
+                    setData!({ ...data, isLoggedIn: true });
+                    navigate('/');
+                  })
+                  .catch((error) => {
+                    setProps({
+                      status: error.response.status,
+                      message: error.response.data.message,
+                    });
+                  });
               })
               .catch(() => {
                 setProps({
@@ -60,15 +73,28 @@ export default function RedirectPage() {
           await api
             .get(`/user/auth?platform=kakao&code=${code}`)
             .then((res) => {
-              localStorage.setItem('id', res.data.id);
-              localStorage.setItem('nickname', res.data.name);
-              setData!({ ...data, isLoggedIn: true });
-              navigate('/');
+              api
+                .post('/user/create', {
+                  username: res.data.name,
+                  uid: res.data.id,
+                })
+                .then(() => {
+                  localStorage.setItem('id', res.data.id);
+                  localStorage.setItem('nickname', res.data.name);
+                  setData!({ ...data, isLoggedIn: true });
+                  navigate('/');
+                })
+                .catch((error) => {
+                  setProps({
+                    status: error.response.status,
+                    message: error.response.data.message,
+                  });
+                });
             })
-            .catch(() => {
+            .catch((error) => {
               setProps({
-                status: '400',
-                message: 'Bad Request.',
+                status: error.response.status,
+                message: error.response.data.message,
               });
             });
           break;
