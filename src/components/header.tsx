@@ -65,13 +65,10 @@ export default function Header() {
                   {
                     text: 'Log out',
                     onClick: () => {
-                      const id = localStorage.getItem('id');
-                      const nickname = localStorage.getItem('nickname');
-
                       localStorage.removeItem('id');
                       localStorage.removeItem('nickname');
                       setData!({ ...data, isLoggedIn: false });
-                      window.location.href = `${workspaceURL}/logout/${id}/${nickname}`;
+                      window.location.href = `${workspaceURL}/logout`;
                     },
                   },
                 ]}
