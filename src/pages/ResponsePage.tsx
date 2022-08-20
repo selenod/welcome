@@ -39,10 +39,8 @@ export default function ErrorPage({ status, message }: ResponseProps) {
           }}
         >
           <p
-            className="urbanist"
             style={{
               fontSize: '10rem',
-              // WebkitTextStroke: '5px var(--textBlack)',
               color: 'var(--textBlack)',
               fontWeight: 900,
               letterSpacing: '.5rem',
@@ -52,9 +50,14 @@ export default function ErrorPage({ status, message }: ResponseProps) {
           </p>
           <p
             style={{
+              position: 'relative',
+              left: '50%',
+              transform: 'translateX(-50%)',
               fontSize: '1.8rem',
               color: 'var(--textBlack)',
               fontWeight: 600,
+              width: '80vw',
+              wordBreak: 'break-all',
             }}
           >
             {message}

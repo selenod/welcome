@@ -17,7 +17,7 @@ export default function RedirectPage() {
   const { platform } = useParams();
 
   useEffect(() => {
-    async function fetchData() {
+    (async () => {
       const url = new URL(window.location.href);
 
       switch (platform) {
@@ -38,7 +38,7 @@ export default function RedirectPage() {
               )
               .then((res) => {
                 api
-                  .post('/user/create', {
+                  .post('/user/login', {
                     username: res.data.name,
                     uid: res.data.id,
                   })
@@ -74,7 +74,7 @@ export default function RedirectPage() {
             .get(`/user/auth?platform=kakao&code=${code}`)
             .then((res) => {
               api
-                .post('/user/create', {
+                .post('/user/login', {
                   username: res.data.name,
                   uid: res.data.id,
                 })
@@ -101,9 +101,7 @@ export default function RedirectPage() {
         default:
           break;
       }
-    }
-
-    fetchData();
+    })();
   }, [navigate, platform, data, setData]);
 
   return <ResponsePage {...props} />;
