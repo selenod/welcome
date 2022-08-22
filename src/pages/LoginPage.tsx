@@ -44,7 +44,7 @@ export default function LoginPage() {
             marginBottom: '2.25rem',
           }}
         >
-          Continue Selenod with..
+          Continue to Selenod with..
         </p>
         <div
           style={{
