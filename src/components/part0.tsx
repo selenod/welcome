@@ -26,9 +26,9 @@ export default function Part0() {
             for everyone
           </p>
           <p className="detail">
-            Selenod is a no-code tool for building applications easily
+            Selenod is a web-based development tool
             <br />
-            for Windows, Linux, and macOS.
+            for creating desktop applications.
           </p>
           {data?.isLoggedIn ? (
             <button

@@ -14,8 +14,8 @@ export default function Part3() {
       <img src={flame} alt="" />
       <div className="preset">
         <div>
-          <p className="title urbanist">It’s time to boost your development.</p>
-          <p className="detail">Selenod is 100% free for all.</p>
+          <p className="title urbanist">Create your own application!</p>
+          <p className="detail">Selenod is 100% free.</p>
           {data?.isLoggedIn ? (
             <button
               onClick={() =>

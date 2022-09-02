@@ -7,9 +7,9 @@ export default function Part1() {
       <div className="preset">
         <div>
           <p className="comment urbanist">
-            <span>Here, all things you need is ready.</span>
+            <span>Everything you need is here.</span>
             <br />
-            Editor, node-based language, builder for web.
+            Web editor, node-based language, and application builder.
           </p>
           <img className="double-windows-img" src={doubleWindows} alt="" />
         </div>
