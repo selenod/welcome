@@ -33,9 +33,9 @@ export default function Part0() {
           {data?.isLoggedIn ? (
             <button
               onClick={() =>
-                (window.location.href = `${workspaceURL}/login/${localStorage.getItem(
-                  'id'
-                )}/${localStorage.getItem('nickname')}`)
+                window.location.replace(
+                  `${workspaceURL}/login/${data?.uid}/${data?.uname}`
+                )
               }
             >
               Go to Workspace

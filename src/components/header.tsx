@@ -27,7 +27,7 @@ export default function Header() {
     document.addEventListener('scroll', () => {
       setScrollProgress(window.scrollY);
     });
-  }, []);
+  }, [data]);
 
   return (
     <div
@@ -58,17 +58,15 @@ export default function Header() {
                   {
                     text: 'Workspace',
                     onClick: () =>
-                      (window.location.href = `${workspaceURL}/login/${localStorage.getItem(
-                        'id'
-                      )}/${localStorage.getItem('nickname')}`),
+                      window.location.replace(
+                        `${workspaceURL}/login/${data?.uid}/${data?.uname}`
+                      ),
                   },
                   {
                     text: 'Log out',
                     onClick: () => {
-                      localStorage.removeItem('id');
-                      localStorage.removeItem('nickname');
+                      localStorage.removeItem('token');
                       setData!({ ...data, isLoggedIn: false });
-                      window.location.href = `${workspaceURL}/logout`;
                     },
                   },
                 ]}
@@ -93,7 +91,7 @@ export default function Header() {
                   float: 'right',
                 }}
               >
-                {localStorage.getItem('nickname')}
+                {data?.uname ?? 'Loading..'}
               </p>
             </div>
           </Popover>

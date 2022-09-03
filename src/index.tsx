@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import './index.css';
 
 import Header from './components/header';
@@ -11,9 +11,12 @@ import LoginPage from './pages/LoginPage';
 import RedirectPage from './pages/RedirectPage';
 import ResponsePage from './pages/ResponsePage';
 import SyncPage from './pages/SyncPage';
+import api from './config/api';
 
 interface Data {
   isLoggedIn: boolean;
+  uid?: string;
+  uname?: string;
 }
 
 const root = ReactDOM.createRoot(
@@ -27,10 +30,26 @@ export const setDataContext = createContext<((d: Data) => void) | null>(null);
 
 function App() {
   const [data, setData] = useState<Data>({
-    isLoggedIn:
-      localStorage.getItem('id') !== null &&
-      localStorage.getItem('nickname') !== null,
+    isLoggedIn: localStorage.getItem('token') !== null,
   });
+
+  useEffect(() => {
+    if (localStorage.getItem('token') !== null) {
+      api
+        .get(`/user/${localStorage.getItem('token')}`)
+        .then((res) => {
+          setData({
+            ...data,
+            uid: res.data.uid,
+            uname: res.data.username,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <setDataContext.Provider value={setData}>

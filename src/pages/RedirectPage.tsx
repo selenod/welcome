@@ -42,11 +42,24 @@ export default function RedirectPage() {
                     username: res.data.name,
                     uid: res.data.id,
                   })
-                  .then(() => {
-                    localStorage.setItem('id', res.data.id);
-                    localStorage.setItem('nickname', res.data.name);
-                    setData!({ ...data, isLoggedIn: true });
-                    navigate('/');
+                  .then(async (res) => {
+                    await api
+                      .get(`/user/${res.data.token}`)
+                      .then((userData) => {
+                        localStorage.setItem('token', res.data.token);
+                        setData!({
+                          isLoggedIn: true,
+                          uid: userData.data.uid,
+                          uname: userData.data.username,
+                        });
+                        navigate('/');
+                      })
+                      .catch((err) => {
+                        setProps({
+                          status: err.response.status,
+                          message: err.response.data.message,
+                        });
+                      });
                   })
                   .catch((error) => {
                     setProps({
@@ -78,11 +91,24 @@ export default function RedirectPage() {
                   username: res.data.name,
                   uid: res.data.id,
                 })
-                .then(() => {
-                  localStorage.setItem('id', res.data.id);
-                  localStorage.setItem('nickname', res.data.name);
-                  setData!({ ...data, isLoggedIn: true });
-                  navigate('/');
+                .then(async (res) => {
+                  await api
+                    .get(`/user/${res.data.token}`)
+                    .then((userData) => {
+                      localStorage.setItem('token', res.data.token);
+                      setData!({
+                        isLoggedIn: true,
+                        uid: userData.data.uid,
+                        uname: userData.data.username,
+                      });
+                      navigate('/');
+                    })
+                    .catch((err) => {
+                      setProps({
+                        status: err.response.status,
+                        message: err.response.data.message,
+                      });
+                    });
                 })
                 .catch((error) => {
                   setProps({
