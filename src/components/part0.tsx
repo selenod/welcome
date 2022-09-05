@@ -8,8 +8,12 @@ import { useContext, useState } from 'react';
 import { dataContext } from '..';
 import { useNavigate } from 'react-router-dom';
 import { workspaceURL } from '../config/config';
+import { useTranslation } from 'react-i18next';
+import i18n from '../locale';
 
 export default function Part0() {
+  const { t } = useTranslation(['page']);
+
   const [scale, setScale] = useState<number>(1);
   const data = useContext(dataContext);
   const navigate = useNavigate();
@@ -18,17 +22,30 @@ export default function Part0() {
     <div className="Part0">
       <div className="preset">
         <div className="title-preset">
-          <p className="title urbanist">
-            <span>No-Code</span>
-            <br />
-            development tool
-            <br />
-            for everyone
-          </p>
+          {i18n.language === 'ko' ? (
+            <p
+              className="title"
+              style={{
+                lineHeight: '5rem',
+              }}
+            >
+              모두를 위한
+              <br />
+              <span className="urbanist">노코드</span> 개발 툴
+            </p>
+          ) : (
+            <p className="title urbanist">
+              <span>No-Code</span>
+              <br />
+              development tool
+              <br />
+              for everyone
+            </p>
+          )}
           <p className="detail">
-            Selenod is a web-based development tool
+            {t('writ0')}
             <br />
-            for creating desktop applications.
+            {t('writ1')}
           </p>
           {data?.isLoggedIn ? (
             <button
@@ -38,10 +55,12 @@ export default function Part0() {
                 )
               }
             >
-              Go to Workspace
+              {t('go_to_workspace')}
             </button>
           ) : (
-            <button onClick={() => navigate('/login')}>Get Started</button>
+            <button onClick={() => navigate('/login')}>
+              {t('get_started')}
+            </button>
           )}
         </div>
         <img className="path-img" src={pathImg} alt="" />

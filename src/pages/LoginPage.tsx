@@ -1,9 +1,12 @@
 import { useContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from '..';
 import { googleClientID, kakaoRestAPIKey } from '../config/config.js';
 
 export default function LoginPage() {
+  const { t } = useTranslation(['page']);
+
   const data = useContext(dataContext);
   const navigate = useNavigate();
 
@@ -44,7 +47,7 @@ export default function LoginPage() {
             marginBottom: '2.25rem',
           }}
         >
-          Continue to Selenod with..
+          {t('continue_to_selenod')}
         </p>
         <div
           style={{
@@ -118,7 +121,7 @@ export default function LoginPage() {
               color: '#757575',
             }}
           >
-            Continue with Google
+            {t('continue_with_google')}
           </p>
         </div>
         <div
@@ -162,7 +165,7 @@ export default function LoginPage() {
               color: '#191919',
             }}
           >
-            Continue with Kakao
+            {t('continue_with_kakao')}
           </p>
         </div>
       </div>

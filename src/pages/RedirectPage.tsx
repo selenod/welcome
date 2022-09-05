@@ -5,6 +5,7 @@ import { ResponseProps } from '../data';
 import { useNavigate, useParams } from 'react-router-dom';
 import { dataContext, setDataContext } from '..';
 import api from '../config/api';
+import i18n from '../locale';
 
 export default function RedirectPage() {
   const [props, setProps] = useState<ResponseProps>({
@@ -41,12 +42,17 @@ export default function RedirectPage() {
                   .post('/user/login', {
                     username: res.data.name,
                     uid: res.data.id,
+                    translate: i18n.language,
                   })
                   .then(async (res) => {
                     await api
                       .get(`/user/${res.data.token}`)
                       .then((userData) => {
                         localStorage.setItem('token', res.data.token);
+                        document.cookie = `translate=${
+                          userData.data.translate
+                        };max-age=${365 * 24 * 60 * 60 * 1000};path=/`;
+                        i18n.changeLanguage(userData.data.translate);
                         setData!({
                           isLoggedIn: true,
                           uid: userData.data.uid,
@@ -90,12 +96,17 @@ export default function RedirectPage() {
                 .post('/user/login', {
                   username: res.data.name,
                   uid: res.data.id,
+                  translate: i18n.language,
                 })
                 .then(async (res) => {
                   await api
                     .get(`/user/${res.data.token}`)
                     .then((userData) => {
                       localStorage.setItem('token', res.data.token);
+                      document.cookie = `translate=${
+                        userData.data.translate
+                      };max-age=${365 * 24 * 60 * 60 * 1000};path=/`;
+                      i18n.changeLanguage(userData.data.translate);
                       setData!({
                         isLoggedIn: true,
                         uid: userData.data.uid,
