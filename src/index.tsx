@@ -12,6 +12,7 @@ import RedirectPage from './pages/RedirectPage';
 import ResponsePage from './pages/ResponsePage';
 import SyncPage from './pages/SyncPage';
 import api from './config/api';
+import i18n from './locale';
 
 interface Data {
   isLoggedIn: boolean;
@@ -38,6 +39,10 @@ function App() {
       api
         .get(`/user/${localStorage.getItem('token')}`)
         .then((res) => {
+          document.cookie = `translate=${res.data.translate};max-age=${
+            365 * 24 * 60 * 60 * 1000
+          };path=/`;
+          i18n.changeLanguage(res.data.translate);
           setData({
             ...data,
             uid: res.data.uid,

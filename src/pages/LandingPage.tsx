@@ -19,6 +19,16 @@ export default function LandingPage() {
     );
     if (translateCookie) {
       i18n.changeLanguage(translateCookie[2]);
+    } else {
+      const translate = window.navigator.language
+        ? window.navigator.language === 'en-US'
+          ? 'en'
+          : 'ko'
+        : 'en';
+      i18n.changeLanguage(translate);
+      document.cookie = `translate=${translate};max-age=${
+        365 * 24 * 60 * 60 * 1000
+      };path=/`;
     }
 
     setIsDone(true);
