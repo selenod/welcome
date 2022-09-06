@@ -51,7 +51,9 @@ export default function Part0() {
             <button
               onClick={() =>
                 window.location.replace(
-                  `${workspaceURL}/login/${data?.uid}/${data?.uname}`
+                  `${workspaceURL}/login/${localStorage.getItem('token')}/${
+                    data?.uid
+                  }/${data?.uname}`
                 )
               }
             >
