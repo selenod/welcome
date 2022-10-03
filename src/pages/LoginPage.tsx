@@ -21,8 +21,8 @@ export default function LoginPage() {
     }
   }, [data, navigate]);
 
-  const googleOAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientID}&response_type=token&redirect_uri=http://localhost:3001/redirect/google&scope=https://www.googleapis.com/auth/userinfo.profile`;
-  const kakaoOAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoRestAPIKey}&redirect_uri=http://localhost:3001/redirect/kakao&response_type=code`;
+  const googleOAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientID}&response_type=token&redirect_uri=http://selenod.com/redirect/google&scope=https://www.googleapis.com/auth/userinfo.profile`;
+  const kakaoOAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoRestAPIKey}&redirect_uri=http://selenod.com/redirect/kakao&response_type=code`;
 
   return (
     <div
