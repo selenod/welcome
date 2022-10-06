@@ -2,7 +2,11 @@ import { useContext, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from '..';
-import { googleClientID, kakaoRestAPIKey } from '../config/config.js';
+import {
+  googleClientID,
+  kakaoRestAPIKey,
+  landingURL,
+} from '../config/config.js';
 
 export default function LoginPage() {
   const { t } = useTranslation(['page']);
@@ -21,8 +25,8 @@ export default function LoginPage() {
     }
   }, [data, navigate]);
 
-  const googleOAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientID}&response_type=token&redirect_uri=https://selenod.com/redirect/google&scope=https://www.googleapis.com/auth/userinfo.profile`;
-  const kakaoOAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoRestAPIKey}&redirect_uri=https://selenod.com/redirect/kakao&response_type=code`;
+  const googleOAuthURL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${googleClientID}&response_type=token&redirect_uri=${landingURL}/redirect/google&scope=https://www.googleapis.com/auth/userinfo.profile`;
+  const kakaoOAuthURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakaoRestAPIKey}&redirect_uri=${landingURL}/redirect/kakao&response_type=code`;
 
   return (
     <div
