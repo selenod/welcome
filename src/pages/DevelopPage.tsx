@@ -92,7 +92,7 @@ export default function DevelopersPage() {
               position: 'relative',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '35rem',
+              width: '36rem',
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
             }}
@@ -102,16 +102,21 @@ export default function DevelopersPage() {
               'Minibox',
               'PatrickKR',
               'ZerOne',
+              'sejoon',
+              'moomin',
               'YuBulliMe',
               'blooop',
-            ].map((cont) => (
+            ].map((cont, index) => (
               <p
+                key={index}
                 style={{
                   fontSize: '1.1rem',
                   fontWeight: 600,
                   textAlign: 'center',
                   color: 'var(--textBlack)',
-                  paddingBottom: '1.5rem',
+                  paddingBottom: '3rem',
+                  position: index >= 6 ? 'relative' : undefined,
+                  left: index >= 6 ? '6rem' : 0,
                 }}
               >
                 {cont}
