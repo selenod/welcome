@@ -13,6 +13,7 @@ import ResponsePage from './pages/ResponsePage';
 import SyncPage from './pages/SyncPage';
 import api from './config/api';
 import i18n from './locale';
+import DevelopersPage from './pages/DevelopPage';
 
 interface Data {
   isLoggedIn: boolean;
@@ -66,6 +67,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/redirect/:platform" element={<RedirectPage />} />
+            <Route path="/developers" element={<DevelopersPage />} />
             <Route
               path="*"
               element={<ResponsePage message="Page not found." status="404" />}
