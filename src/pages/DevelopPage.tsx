@@ -92,7 +92,7 @@ export default function DevelopersPage() {
               position: 'relative',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '36rem',
+              width: '25rem',
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
             }}
@@ -116,7 +116,7 @@ export default function DevelopersPage() {
                   color: 'var(--textBlack)',
                   paddingBottom: '3rem',
                   position: index >= 6 ? 'relative' : undefined,
-                  left: index >= 6 ? '6rem' : 0,
+                  left: index >= 6 ? '5rem' : 0,
                 }}
               >
                 {cont}
