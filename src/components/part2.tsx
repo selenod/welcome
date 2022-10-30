@@ -36,6 +36,28 @@ export default function Part2() {
             <div
               className="icon"
               style={{
+                backgroundColor: '#efdaf2',
+              }}
+            >
+              <svg viewBox="0 0 20 20" fill="#d673e5">
+                <path d="M5.5 16a3.5 3.5 0 01-.369-6.98 4 4 0 117.753-1.977A4.5 4.5 0 1113.5 16h-8z" />
+              </svg>
+            </div>
+            <p
+              className={`title ${i18n.language === 'ko' ? null : 'urbanist'}`}
+            >
+              {t('writ15')}
+            </p>
+            <p className="detail">
+              {t('writ16')}
+              <br />
+              {t('writ17')}
+            </p>
+          </div>
+          <div className="section">
+            <div
+              className="icon"
+              style={{
                 backgroundColor: '#e0daf2',
               }}
             >

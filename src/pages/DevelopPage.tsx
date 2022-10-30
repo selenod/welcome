@@ -47,17 +47,25 @@ export default function DevelopersPage() {
               marginTop: '1.5rem',
             }}
           />
-          <p
+          <a
+            className="credit-a"
+            href={`https://github.com/unsignd`}
             style={{
-              marginTop: '2rem',
-              fontSize: '1.1rem',
-              fontWeight: 600,
-              textAlign: 'center',
-              color: 'var(--textBlack)',
+              textDecoration: 'none',
             }}
           >
-            Yejoon Kim
-          </p>
+            <p
+              style={{
+                marginTop: '2rem',
+                fontSize: '1.1rem',
+                fontWeight: 600,
+                textAlign: 'center',
+                color: 'var(--textBlack)',
+              }}
+            >
+              Yejoon Kim
+            </p>
+          </a>
         </div>
         <div
           style={{
@@ -92,36 +100,61 @@ export default function DevelopersPage() {
               position: 'relative',
               left: '50%',
               transform: 'translateX(-50%)',
-              width: '25rem',
+              width: '30rem',
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
             }}
           >
             {[
               'choshinyoung',
-              'Minibox',
-              'PatrickKR',
-              'ZerOne',
-              'sejoon',
-              'moomin',
+              'minibox24',
+              'patrick-choe',
+              'ZeroOneDeveloper',
+              'sandsunset',
+              'unknownbox-collab',
               'YuBulliMe',
               'blooop',
-            ].map((cont, index) => (
-              <p
-                key={index}
-                style={{
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  textAlign: 'center',
-                  color: 'var(--textBlack)',
-                  paddingBottom: '3rem',
-                  position: index >= 6 ? 'relative' : undefined,
-                  left: index >= 6 ? '5rem' : 0,
-                }}
-              >
-                {cont}
-              </p>
-            ))}
+            ].map((cont, index) =>
+              index <= 5 ? (
+                <a
+                  key={index}
+                  className="credit-a"
+                  href={`https://github.com/${cont}`}
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: '1.1rem',
+                      fontWeight: 600,
+                      textAlign: 'center',
+                      color: 'var(--textBlack)',
+                      paddingBottom: '3rem',
+                      position: index >= 6 ? 'relative' : undefined,
+                      left: index >= 6 ? '5rem' : 0,
+                    }}
+                  >
+                    {cont}
+                  </p>
+                </a>
+              ) : (
+                <p
+                  key={index}
+                  style={{
+                    fontSize: '1.1rem',
+                    fontWeight: 600,
+                    textAlign: 'center',
+                    color: 'var(--textBlack)',
+                    paddingBottom: '3rem',
+                    position: index >= 6 ? 'relative' : undefined,
+                    left: index >= 6 ? '5rem' : 0,
+                  }}
+                >
+                  {cont}
+                </p>
+              )
+            )}
           </div>
         </div>
       </div>
