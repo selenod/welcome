@@ -69,6 +69,7 @@
   clear: both;
   float: left;
   color: var(--textDetail);
+  text-decoration-color: var(--textDetail);
   font-size: 1.05rem;
   margin-top: 1.25rem;
 }

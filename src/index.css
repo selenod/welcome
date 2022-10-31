@@ -157,6 +157,10 @@ button {
   font-size: 0.9rem;
 }
 
+.credit-a {
+  text-decoration-color: var(--textBlack);
+}
+
 .credit-a:hover {
   text-decoration: underline !important;
 }
